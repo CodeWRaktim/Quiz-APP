@@ -1,4 +1,4 @@
-// Quiz questions data structure
+
 const questions = [
   {
     type: 'single',
@@ -17,7 +17,7 @@ const questions = [
     question: '______ is the largest planet in our solar system.',
     answer: 'Jupiter'
   },
-  // New questions below
+  
   {
     type: 'single',
     question: 'Which language is used for web apps?',
