@@ -122,12 +122,13 @@ body {
 }
 
 .quiz-title {
-  background: linear-gradient(90deg, #ff9800, #a8ff78, #00c6fb);
+  font-family: 'Luckiest Guy', cursive, sans-serif;
+  background: linear-gradient(90deg, #1de9b6, #b2ff59, #76ff03);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  text-shadow: 2px 4px 12px rgba(0,0,0,0.18), 0 1px 0 #fff;
+  text-shadow: 2px 4px 12px rgba(0,0,0,0.18), 0 1px 0 #f57878;
   letter-spacing: 2px;
   animation: titleWobble 2.5s infinite ease-in-out;
 }
