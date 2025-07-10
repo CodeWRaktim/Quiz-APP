@@ -1,0 +1,143 @@
+/* Custom color theme */
+:root {
+  --quiz-bg: #f3f4f6;
+  --quiz-primary: #ff0080; /* Vibrant pink */
+  --quiz-accent: #00f2fe; /* Vibrant cyan */
+  --quiz-correct: #22d3ee; /* Vibrant teal */
+  --quiz-wrong: #f43f5e; /* Vibrant red */
+  --quiz-card: rgba(255,255,255,0.85);
+}
+
+body {
+  background: var(--quiz-bg);
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.quiz-fade-in {
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.quiz-btn-animated {
+  transition: background 0.2s, transform 0.2s;
+  background: var(--quiz-primary);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.quiz-btn-animated:hover {
+  background: var(--quiz-accent);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.score-reveal {
+  animation: popIn 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Quiz card overlay for readability */
+.bg-white, .quiz-card {
+  background: var(--quiz-card) !important;
+  backdrop-filter: blur(2px);
+}
+
+/* Highlight correct/wrong answers (optional for future use) */
+.correct-answer {
+  background: var(--quiz-correct) !important;
+  color: #fff !important;
+}
+.wrong-answer {
+  background: var(--quiz-wrong) !important;
+  color: #fff !important;
+}
+
+/* Button Ripple Effect */
+.quiz-btn-animated .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background: rgba(255,255,255,0.7);
+  pointer-events: none;
+}
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Card Shadow Pulse */
+.quiz-card-pulse {
+  animation: cardPulse 0.5s;
+}
+@keyframes cardPulse {
+  0% { box-shadow: 0 0 0 0 var(--quiz-primary); }
+  70% { box-shadow: 0 0 20px 10px var(--quiz-primary); }
+  100% { box-shadow: 0 0 0 0 var(--quiz-primary); }
+}
+
+/* Confetti Animation */
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  border-radius: 3px;
+  opacity: 0.8;
+  animation: confetti-fall 1.2s linear forwards;
+}
+@keyframes confetti-fall {
+  to {
+    transform: translateY(400px) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+/* Correct/Wrong Answer Flash */
+.flash-correct {
+  animation: flashCorrect 0.4s;
+}
+@keyframes flashCorrect {
+  0% { background: var(--quiz-correct); color: #fff; }
+  100% { background: inherit; color: inherit; }
+}
+.flash-wrong {
+  animation: flashWrong 0.4s;
+}
+@keyframes flashWrong {
+  0% { background: var(--quiz-wrong); color: #fff; }
+  100% { background: inherit; color: inherit; }
+}
+
+.quiz-title {
+  background: linear-gradient(90deg, #ff9800, #a8ff78, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 2px 4px 12px rgba(0,0,0,0.18), 0 1px 0 #fff;
+  letter-spacing: 2px;
+  animation: titleWobble 2.5s infinite ease-in-out;
+}
+@keyframes titleWobble {
+  0%, 100% { transform: rotate(-2deg) scale(1.04); }
+  10% { transform: rotate(2deg) scale(1.07); }
+  20% { transform: rotate(-2deg) scale(1.04); }
+  30% { transform: rotate(2deg) scale(1.07); }
+  40%, 60% { transform: rotate(0deg) scale(1); }
+  70% { transform: rotate(-1deg) scale(1.03); }
+  80% { transform: rotate(1deg) scale(1.03); }
+  90% { transform: rotate(0deg) scale(1); }
+} 

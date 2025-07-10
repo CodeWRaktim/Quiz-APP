@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Game</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-xl bg-white rounded-lg shadow-lg p-8">
+    <h1 class="text-4xl font-extrabold text-center mb-2 quiz-title">Quiztastic Showdown: Battle of the Brains! 🤪🧠</h1>
+    <div class="text-center text-lg font-semibold mb-6 text-pink-500 animate-bounce">Who will be the ultimate quiz champion?</div>
+    <div id="player-setup" class="mb-6">
+      <label class="block mb-2 font-semibold">Number of Players:</label>
+      <select id="numPlayers" class="border rounded px-3 py-2 w-full mb-4">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <button id="startGame" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full">Start Game</button>
+    </div>
+    <div id="quiz-container" class="hidden"></div>
+    <div id="score-container" class="hidden mt-6"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html> 
